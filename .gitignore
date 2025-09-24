@@ -1,0 +1,107 @@
+################################
+# .NET Core / C# Standard
+################################
+
+# Build Binaries
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+**/[Dd]ebug/
+**/[Rr]elease/
+*.pdb
+*.suo
+
+# NuGet and Packages
+packages/
+*.nupkg
+*.snupkg
+*.nupkg.sha512
+*.nuget.props
+!*.nupkg.sha512
+
+# Build/Restore Files
+.vs/
+.editorconfig
+.git/
+
+# Visual Studio (IDE) Files - Ignores personal settings and artifacts
+*.user
+*.log
+*.bak
+*.ncb
+*.scc
+*.vspscc
+*.vssscc
+*.vsw
+*.code-workspace
+*.rptproj
+
+# Additional Binaries and Build Artifacts
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.dylib
+*.o
+*.la
+*.lo
+*.sbr
+*.sbp
+*.bsc
+*.pgm
+*.pgd
+*.meta
+*.tlb
+*.tlh
+*.tmp
+*.vsix
+*.vcproj
+*.vcxproj
+*.sln.docstates
+*.vsp
+*.vsn
+
+# Temporary Test and Coverage Files
+*.trx
+*.coverage
+*.coveragexml
+coverage.cobertura.xml
+# DotCover/Rider Coverage Data
+*.dotCover
+
+################################
+# JetBrains Rider / IntelliJ
+################################
+# Main Rider (and other JetBrains IDEs) configuration folder
+.idea/
+# Older JetBrains workspace and project files
+*.iws
+*.iml
+*.ipr
+# Test cache folder
+/ReSharperTestRunner/
+
+# Azure Generated Files
+AzureServiceFabric/
+ServiceFabric/
+
+# Specific Local Configurations
+# (Keep these ignored to prevent committing local environment settings or secrets)
+appsettings.Development.json
+appsettings.Local.json
+launchSettings.json
+
+# Certificates/Keys
+*.pfx
+*.cer
+*.crt
+*.key
+
+# Git LFS (If in use)
+.git/lfs/
+
+#docker ignore
+.dockerignore
