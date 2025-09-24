@@ -27,7 +27,7 @@ public class UpdateSaleCommandHandler(ISaleRepository saleRepository) : IRequest
 
         sale.ReplaceItems(newItems);
 
-        await saleRepository.UpdateAsync(sale, cancellationToken);
+        await saleRepository.UpdateWithItemsAsync(sale, cancellationToken);
 
         return new SaleDto(
             sale.Id,

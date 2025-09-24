@@ -59,7 +59,7 @@ public class UpdateSaleCommandHandlerSpec
         result.Items.First().ProductName.Should().Be("New Product");
         result.Total.Should().Be(30m);
 
-        _saleRepository.Verify(r => r.UpdateAsync(It.IsAny<Sale>(), It.IsAny<CancellationToken>()), Times.Once);
+        _saleRepository.Verify(r => r.UpdateWithItemsAsync(It.IsAny<Sale>(), It.IsAny<CancellationToken>()), Times.Once);
     }
 
     /// <summary>
@@ -91,7 +91,7 @@ public class UpdateSaleCommandHandlerSpec
 
         // Assert
         result.Should().BeNull();
-        _saleRepository.Verify(r => r.UpdateAsync(It.IsAny<Sale>(), It.IsAny<CancellationToken>()), Times.Never);
+        _saleRepository.Verify(r => r.UpdateWithItemsAsync(It.IsAny<Sale>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 
     /// <summary>

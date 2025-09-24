@@ -9,5 +9,6 @@ public interface ISaleRepository
     Task<IEnumerable<Sale>> ListAsync(CancellationToken cancellationToken = default);
     Task AddAsync(Sale sale, CancellationToken cancellationToken = default);
     Task UpdateAsync(Sale sale, CancellationToken cancellationToken = default);
+    Task UpdateWithItemsAsync(Sale sale, CancellationToken cancellationToken = default);
     Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
 }

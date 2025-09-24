@@ -36,15 +36,19 @@ public class SaleRepository(DefaultContext context) : ISaleRepository
 
     public async Task UpdateAsync(Sale sale, CancellationToken cancellationToken = default)
     {
+        context.Sales.Update(sale);
+        await context.SaveChangesAsync(cancellationToken);
+    }
+    
+    public async Task UpdateWithItemsAsync(Sale sale, CancellationToken cancellationToken = default)
+    {
         var existingItems = context.SaleItems.Where(i => i.SaleId == sale.Id);
         
         context.SaleItems.RemoveRange(existingItems);
 
         context.SaleItems.AddRange(sale.Items);
 
-        context.Sales.Update(sale);
-
-        await context.SaveChangesAsync(cancellationToken);
+        await UpdateAsync(sale, cancellationToken);
     }
 
     public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
